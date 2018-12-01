@@ -1,0 +1,83 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Book Lovers</title>
+    <link rel="stylesheet" href="/home/dominik/WebstormProjects/static_bez_bootstrap/css/my_style.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Archivo+Narrow|Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+
+
+</head>
+
+<body>
+<div class="section sectionOne">
+    <nav>
+        <div><a href="#"><img src="./pictures/bare_font_logo.png"></a></div>
+        <ul>
+            <li><a href="#books">BOOKS</a>
+                <ul>
+                    <li><a a="#">My Books</a></li>
+                    <li><a a="#">Books Base</a></li>
+                    <li><a a="#">Reviews</a></li>
+                    <li><a a="#">Articles</a></li>
+                    <li><a a="#">Top 100</a></li>
+                    <li><a a="#">Newest</a></li>
+                    <li><a a="#">Soon</a></li>
+                </ul>
+            </li>
+            <li><a href="#writers">WRITERS</a>
+                <ul>
+                    <li><a href="#">My Writes</a></li>
+                    <li><a href="#">Writers Base</a></li>
+                    <li><a href="#">By Epoch</a></li>
+                    <li><a href="#">Top 10</a></li>
+                </ul>
+            </li>
+            <li><a href="#community">COMMUNITY</a></li>
+            {% if user.is_authenticated %}
+            <li><a href="#market">MARKET</a></li>
+            {% endif %}
+            <li><a>ABOUT</a></li>
+        </ul>
+
+        <div class="login_container">
+         {% if user.is_authenticated %}
+             <a href="{% url 'logout' %}" type="button" class="login_button">Logout</a>
+             <a href="{% url 'profile' %}" type="button" class="signin_button">Profile</a>
+
+         {% else %}
+            <a type="button" class="login_button">Log In</a>
+            <a type="button" class="signin_button">Sign Up</a>
+         {% endif %}
+
+        </div>
+
+    </nav>
+</div>
+
+
+<img alt="book lovers logo" src="./pictures/logo_1.png" class="main_logo_pic">
+
+{% block content %}{% endblock %}
+
+<div class="media_container">
+
+    <div class="media_facebook"><a href="https://www.facebook.com/"><img src="./pictures/facebook.png" width="60"
+                                                                         height="60"></a></div>
+    <div class="media_youtube"><a href="https://www.youtube.com/"><img src="./pictures/youtube.png" width="60"
+                                                                       height="60"/></a></div>
+    <div class="media_facebook"><a href="https://twitter.com/?lang=pl"><img src="./pictures/twitter.png" width="60"
+                                                                            height="60"/></a></div>
+</div>
+<script src="./js/my_functions.js"></script>
+</div>
+<footer>
+
+</footer>
+</body>
+
+</html>

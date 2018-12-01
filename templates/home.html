@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+
+<h1>Home. Najlepsza strona na świecie</h1>
+{% if messages %}
+    {% for message in messages %}
+        <div>{{ message }}</div>
+    {% endfor %}
+{% endif %}

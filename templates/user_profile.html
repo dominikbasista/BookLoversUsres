@@ -1,0 +1,14 @@
+Działa
+<h1>{{ user.username }}</h1>
+{{ user.name }}
+{{ user.favorite_categories }}
+{#<img src="{% url %}" alt="">#}
+
+
+<form action="" method="POST">
+{% csrf_token %}
+{#    {{ form.name }}#}
+{#    {{ form.password }}#}
+    {{ form.as_p }}
+    <input type="submit" data="SEND">
+    </form>
